@@ -92,7 +92,7 @@ class gameViewController: UIViewController {
             image9.image = UIImage(named: playerMark)
         //We need a default so that the switch can close. Even though it will never be run it wont work without it
         default:
-            image5.image = UIImage(named: playerMark)
+            break
         }
     }
     
