@@ -104,13 +104,15 @@ class gameViewController: UIViewController {
         
         //To check all the possibilites we need to have it check the players ID and the play position for all possible wins
         for(key,value) in whoWon{
-            if((plays[7] == value && plays[8] == value && plays[9] == value) ||
+            if ((plays[1] == value && plays[2] == value && plays[3] == value) || // Horizontal
                 (plays[4] == value && plays[5] == value && plays[6] == value) ||
-                (plays[1] == value && plays[2] == value && plays[3] == value) ||
-                (plays[1] == value && plays[4] == value && plays[7] == value) ||
+                (plays[7] == value && plays[8] == value && plays[9] == value) ||
+                (plays[1] == value && plays[4] == value && plays[7] == value) || // Vertical
                 (plays[2] == value && plays[5] == value && plays[8] == value) ||
-                (plays[1] == value && plays[5] == value && plays[9] == value) ||
-                (plays[3] == value && plays[6] == value && plays[9] == value)){
+                (plays[3] == value && plays[6] == value && plays[9] == value) ||
+                (plays[1] == value && plays[5] == value && plays[9] == value) || // Diagonal
+                (plays[3] == value && plays[5] == value && plays[7] == value)) {
+                
                 
                 //If someone did win we need to set some stuff up
                 
@@ -124,9 +126,6 @@ class gameViewController: UIViewController {
                 restart.isHidden = false
                 //And we need to tell the game that someone has won
                 done = true
-                
-                
-                
             }
         }
         
