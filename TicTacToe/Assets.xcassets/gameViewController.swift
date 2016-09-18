@@ -64,7 +64,14 @@ class gameViewController: UIViewController {
     func userTurn(spot:Int, player:Int){
         
         //Create an or statement that uses the X or O png depending on whos turn it is
-        let playerMark = player == 0 ? "X.png" : "O.png"
+        let playerMark: String
+        if player == 0 {
+            playerMark = "X.png"
+        } else {
+            playerMark = "O.png"
+        }
+        // Or use ternary operator to make it more concise:
+        // let playerMark = player == 0 ? "X.png" : "O.png"
         
         //Set the current spot to the players X or O
         plays[spot] = player
