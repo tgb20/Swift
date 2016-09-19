@@ -91,6 +91,7 @@ class gameViewController: UIViewController {
             playerMark = "O.png"
         }
         // Or use ternary operator to make it more concise:
+        //Can be viewed as if player is equal to 0 than X otherwise O
         // let playerMark = player == 0 ? "X.png" : "O.png"
         
         // Set the current spot to the players X or O
