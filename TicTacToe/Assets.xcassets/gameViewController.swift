@@ -53,7 +53,31 @@ class gameViewController: UIViewController {
         //We need to hide the userMessage and the restart button
         userMessage.isHidden = true
         restart.isHidden = true
+        
+        //Run and you will just see the board
+        //When you click nothing will happen
     }
+    
+    //Create func userTurn(spot: Int, player: Int)
+    //Create checkForWin()
+    //Create reset()
+    
+    
+    
+    // Create an Action to Happen when a Button is Clicked
+    @IBAction func UIButtonClicked(sender:UIButton){
+        
+        // Create an if Statement that checks if the player can play
+        if !(plays[sender.tag] != nil) && !done {
+            // Then play a turn
+            userTurn(spot: sender.tag, player: playerTurn)
+        }
+        // After the turn we need to check if a player has won
+        checkForWin();
+        // Then switch to the other player
+        playerTurn = 1 - playerTurn
+    }
+    
     
     // Create a function that plays a users turn
     // We need to additional Ints for where the player played and who they are
@@ -130,20 +154,6 @@ class gameViewController: UIViewController {
                 done = true
             }
         }
-    }
-    
-    // Create an Action to Happen when a Button is Clicked
-    @IBAction func UIButtonClicked(sender:UIButton){
-        
-        // Create an if Statement that checks if the player can play
-        if !(plays[sender.tag] != nil) && !done {
-            // Then play a turn
-            userTurn(spot: sender.tag, player: playerTurn)
-        }
-        // After the turn we need to check if a player has won
-        checkForWin();
-        // Then switch to the other player
-        playerTurn = 1 - playerTurn
     }
 
     func reset(){
